@@ -1,1 +1,596 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Romel Percy Melgarejo Bolivar — Perfil Profesional y Académico</title>
+<style>
+  :root{
+    --ink:#0f1e26;
+    --night:#122430;
+    --night-2:#0c1920;
+    --paper:#f3efe4;
+    --paper-dim:#e7e0cf;
+    --ochre:#c98a3a;
+    --ochre-bright:#e2a95c;
+    --teal:#3f7f7a;
+    --line: rgba(243,239,228,0.16);
+    --line-soft: rgba(15,30,38,0.12);
+    --serif: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+    --mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--serif);
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{ color:inherit; }
+
+  .label{
+    font-family:var(--mono);
+    font-size:12.5px;
+    letter-spacing:0.02em;
+    color:var(--teal);
+  }
+
+  /* ---------- Layout shell ---------- */
+  .shell{
+    display:grid;
+    grid-template-columns: 340px 1fr;
+    min-height:100vh;
+  }
+
+  @media (max-width: 900px){
+    .shell{ grid-template-columns: 1fr; }
+  }
+
+  /* ---------- Left panel ---------- */
+  .panel{
+    background:var(--night);
+    color:var(--paper);
+    position:sticky;
+    top:0;
+    height:100vh;
+    padding:52px 40px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    background-image:
+      radial-gradient(circle at 18% 8%, rgba(226,169,92,0.10), transparent 45%),
+      linear-gradient(180deg, var(--night) 0%, var(--night-2) 100%);
+  }
+
+  @media (max-width: 900px){
+    .panel{ position:relative; height:auto; padding:44px 28px; }
+  }
+
+  .mark{
+    width:52px; height:52px;
+    border:1px solid var(--ochre-bright);
+    border-radius:2px;
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--mono);
+    font-size:15px;
+    letter-spacing:0.04em;
+    color:var(--ochre-bright);
+    margin-bottom:34px;
+  }
+
+  .panel h1{
+    font-size:29px;
+    line-height:1.22;
+    margin:0 0 8px 0;
+    font-weight:600;
+    color:var(--paper);
+  }
+
+  .panel .role{
+    font-family:var(--mono);
+    font-size:13.5px;
+    color:var(--ochre-bright);
+    line-height:1.55;
+    margin:0 0 26px 0;
+  }
+
+  .panel .summary{
+    font-size:15px;
+    color:rgba(243,239,228,0.78);
+    line-height:1.65;
+    margin:0;
+  }
+
+  .panel-nav{
+    margin-top:38px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .panel-nav a{
+    font-family:var(--mono);
+    font-size:12.5px;
+    text-decoration:none;
+    color:rgba(243,239,228,0.55);
+    padding:6px 0;
+    border-bottom:1px solid transparent;
+    width:fit-content;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .panel-nav a:hover{
+    color:var(--ochre-bright);
+    border-color:var(--ochre-bright);
+  }
+
+  .panel-foot{
+    margin-top:40px;
+    padding-top:22px;
+    border-top:1px solid var(--line);
+  }
+  .panel-foot .loc{
+    font-family:var(--mono);
+    font-size:12px;
+    color:rgba(243,239,228,0.5);
+    margin-bottom:14px;
+  }
+  .links{
+    display:flex; flex-direction:column; gap:8px;
+  }
+  .links a{
+    font-size:14px;
+    text-decoration:none;
+    color:var(--paper);
+    border-bottom:1px solid var(--line);
+    padding-bottom:2px;
+    width:fit-content;
+  }
+  .links a:hover{ color:var(--ochre-bright); border-color:var(--ochre-bright); }
+
+  /* ---------- Right content ---------- */
+  .content{ padding:64px 60px 100px; max-width:900px; }
+  @media (max-width: 900px){ .content{ padding:44px 26px 80px; } }
+
+  section{ margin-bottom:78px; scroll-margin-top:40px; }
+
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:16px;
+    margin-bottom:28px;
+  }
+  .section-num{
+    font-family:var(--mono);
+    font-size:13px;
+    color:var(--ochre);
+  }
+  .section-head h2{
+    font-size:15px;
+    text-transform:none;
+    letter-spacing:0.01em;
+    margin:0;
+    font-family:var(--mono);
+    font-weight:600;
+    color:var(--ink);
+  }
+  .section-head .rule{
+    flex:1;
+    height:1px;
+    background:var(--line-soft);
+  }
+
+  p.lede{
+    font-size:19px;
+    line-height:1.7;
+    max-width:64ch;
+    color:var(--ink);
+  }
+  p.lede + p{ max-width:64ch; color:#3a4a52; }
+
+  /* Stat row */
+  .stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:1px;
+    background:var(--line-soft);
+    border:1px solid var(--line-soft);
+    margin-top:36px;
+  }
+  .stat{
+    background:var(--paper);
+    padding:22px 20px;
+  }
+  .stat .n{
+    font-family:var(--mono);
+    font-size:30px;
+    color:var(--night);
+  }
+  .stat .d{
+    font-family:var(--mono);
+    font-size:11.5px;
+    color:var(--teal);
+    margin-top:6px;
+  }
+  @media (max-width:640px){ .stats{ grid-template-columns:repeat(2,1fr); } }
+
+  /* Timeline (education / experience) */
+  .timeline{ border-left:1px solid var(--line-soft); }
+  .titem{
+    position:relative;
+    padding:0 0 34px 28px;
+  }
+  .titem:last-child{ padding-bottom:0; }
+  .titem::before{
+    content:"";
+    position:absolute;
+    left:-4.5px; top:6px;
+    width:8px; height:8px;
+    background:var(--ochre);
+    border-radius:50%;
+  }
+  .titem .when{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--teal);
+    margin-bottom:6px;
+    display:block;
+  }
+  .titem h3{
+    font-size:18px;
+    margin:0 0 4px 0;
+    font-weight:600;
+  }
+  .titem .org{
+    font-size:15px;
+    color:#4a5a62;
+    margin:0;
+  }
+
+  /* Cards grid (software / patents) */
+  .cards{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1px;
+    background:var(--line-soft);
+    border:1px solid var(--line-soft);
+  }
+  @media (max-width:640px){ .cards{ grid-template-columns:1fr; } }
+  .card{
+    background:var(--paper);
+    padding:26px 24px;
+  }
+  .card .reg{
+    font-family:var(--mono);
+    font-size:11.5px;
+    color:var(--ochre);
+    display:block;
+    margin-bottom:10px;
+  }
+  .card h3{
+    font-size:17px;
+    margin:0 0 8px 0;
+  }
+  .card p{
+    font-size:14.5px;
+    color:#4a5a62;
+    margin:0;
+    line-height:1.6;
+  }
+
+  /* Publications list */
+  .pubs{ display:flex; flex-direction:column; }
+  .pub{
+    display:grid;
+    grid-template-columns:70px 1fr;
+    gap:20px;
+    padding:20px 0;
+    border-bottom:1px solid var(--line-soft);
+  }
+  .pub:first-child{ border-top:1px solid var(--line-soft); }
+  .pub .year{
+    font-family:var(--mono);
+    font-size:13px;
+    color:var(--teal);
+    padding-top:2px;
+  }
+  .pub .type{
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--ochre);
+    display:block;
+    margin-bottom:6px;
+  }
+  .pub h3{
+    font-size:16.5px;
+    margin:0 0 4px 0;
+    font-weight:600;
+    font-style:italic;
+  }
+  .pub p{ margin:0; font-size:14.5px; color:#4a5a62; }
+
+  /* Languages */
+  .langs{ display:flex; flex-direction:column; gap:18px; max-width:480px; }
+  .lang-row{ display:grid; grid-template-columns:120px 1fr auto; align-items:center; gap:16px; }
+  .lang-row .name{ font-size:15px; }
+  .lang-row .level{ font-family:var(--mono); font-size:12px; color:var(--teal); }
+  .bar{ height:4px; background:var(--line-soft); position:relative; }
+  .bar span{ position:absolute; left:0; top:0; height:100%; background:var(--ochre); }
+
+  /* Footer */
+  footer{
+    border-top:1px solid var(--line-soft);
+    padding-top:26px;
+    font-family:var(--mono);
+    font-size:12px;
+    color:#5c6a70;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  .source-note{
+    font-family:var(--mono);
+    font-size:11.5px;
+    color:#7a8890;
+    margin-top:6px;
+    line-height:1.6;
+  }
+</style>
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- LEFT PANEL -->
+  <aside class="panel">
+    <div>
+      <div class="mark">RPM</div>
+      <h1>Romel Percy<br>Melgarejo Bolivar</h1>
+      <p class="role">M.Sc. Informática — Gerencia de TIC<br>Ingeniero Estadístico e Informático</p>
+      <p class="summary">
+        Docente universitario e investigador especializado en ciencia de datos,
+        redes telemáticas y tecnologías web, con producción científica aplicada
+        a salud, educación e industria, y liderazgo institucional en Puno, Perú.
+      </p>
+
+      <nav class="panel-nav">
+        <a href="#formacion">Formación académica</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#software">Software y patentes</a>
+        <a href="#investigacion">Producción científica</a>
+        <a href="#idiomas">Idiomas</a>
+      </nav>
+    </div>
+
+    <div class="panel-foot">
+      <div class="loc">Puno, Perú</div>
+      <div class="links">
+        <a href="https://permelro-dev.github.io/" target="_blank" rel="noopener">Sitio profesional →</a>
+        <a href="https://concytec.gob.pe" target="_blank" rel="noopener">Perfil CTI Vitae (CONCYTEC) →</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- RIGHT CONTENT -->
+  <main class="content">
+
+    <section id="resumen">
+      <div class="section-head">
+        <span class="section-num">00</span>
+        <h2>resumen</h2>
+        <span class="rule"></span>
+      </div>
+      <p class="lede">
+        Profesional peruano de la ingeniería con competencias avanzadas en
+        ciencia de datos, redes telemáticas, tecnologías web y simulación
+        de entornos tridimensionales.
+      </p>
+      <p>
+        Sólido trasfondo en investigación científica aplicada al ámbito de la
+        salud y la educación, respaldado por la dirección de proyectos y
+        cargos de liderazgo institucional en la región Puno.
+      </p>
+
+      <div class="stats">
+        <div class="stat"><div class="n">4</div><div class="d">grados / especialidades</div></div>
+        <div class="stat"><div class="n">4</div><div class="d">registros indecopi</div></div>
+        <div class="stat"><div class="n">6+</div><div class="d">publicaciones indexadas</div></div>
+        <div class="stat"><div class="n">3</div><div class="d">idiomas</div></div>
+      </div>
+    </section>
+
+    <section id="formacion">
+      <div class="section-head">
+        <span class="section-num">01</span>
+        <h2>formación académica</h2>
+        <span class="rule"></span>
+      </div>
+      <div class="timeline">
+        <div class="titem">
+          <span class="when">Postgrado</span>
+          <h3>Magíster Scientiae en Informática</h3>
+          <p class="org">Mención en Gerencia de TIC — Universidad Nacional del Altiplano</p>
+        </div>
+        <div class="titem">
+          <span class="when">Título profesional</span>
+          <h3>Ingeniero Estadístico e Informático</h3>
+          <p class="org">Universidad Nacional del Altiplano</p>
+        </div>
+        <div class="titem">
+          <span class="when">Grado académico</span>
+          <h3>Bachiller en Ciencias Estadísticas e Informática</h3>
+          <p class="org">Universidad Nacional del Altiplano</p>
+        </div>
+        <div class="titem">
+          <span class="when">Estudios técnicos</span>
+          <h3>Especialidad en Mecatrónica Automotriz</h3>
+          <p class="org">I.S.T. José Antonio Encinas, Puno</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experiencia">
+      <div class="section-head">
+        <span class="section-num">02</span>
+        <h2>experiencia laboral e institucional</h2>
+        <span class="rule"></span>
+      </div>
+      <div class="timeline">
+        <div class="titem">
+          <span class="when">Octubre 2022 — actualidad</span>
+          <h3>Presidente del Capítulo de Ingenieros Estadísticos e Informáticos</h3>
+          <p class="org">Colegio de Ingenieros del Perú — Consejo Departamental Puno</p>
+        </div>
+        <div class="titem">
+          <span class="when">2020 — actualidad</span>
+          <h3>Docente Universitario Ordinario / Investigador</h3>
+          <p class="org">Universidad Nacional del Altiplano, Puno (UNA Puno)</p>
+        </div>
+        <div class="titem">
+          <span class="when">—</span>
+          <h3>Docente Auxiliar Ordinario</h3>
+          <p class="org">Universidad Nacional de Moquegua (UNAM)</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="software">
+      <div class="section-head">
+        <span class="section-num">03</span>
+        <h2>software y patentes registradas — indecopi</h2>
+        <span class="rule"></span>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <span class="reg">Reg. 3115-2022</span>
+          <h3>Criptologin</h3>
+          <p>Módulo integrable de validación de usuarios mediante token USB DNI electrónico.</p>
+        </div>
+        <div class="card">
+          <span class="reg">Reg. 3113-2022</span>
+          <h3>Enviromaker</h3>
+          <p>Software de procesamiento y generación de ambientes tridimensionales.</p>
+        </div>
+        <div class="card">
+          <span class="reg">Reg. 3112-2022</span>
+          <h3>GLPAK GUI</h3>
+          <p>Interfaz gráfica para renderizado 3D en ventanas Win GDI+.</p>
+        </div>
+        <div class="card">
+          <span class="reg">Reg. 138-2017</span>
+          <h3>Plataforma de Certificación Electrónica</h3>
+          <p>Arquitectura de software para la emisión de firmas seguras.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="investigacion">
+      <div class="section-head">
+        <span class="section-num">04</span>
+        <h2>producción científica</h2>
+        <span class="rule"></span>
+      </div>
+      <div class="pubs">
+        <div class="pub">
+          <div class="year">2023</div>
+          <div>
+            <span class="type">capítulo de libro</span>
+            <h3>Predicción de diabetes en mujeres mediante un modelo probabilístico basado en Redes Bayesianas</h3>
+            <p>Publicado en <em>O Cuidado em Saúde Baseado em Evidências</em>.</p>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="year">2022</div>
+          <div>
+            <span class="type">artículo de revista</span>
+            <h3>Arquitectura pervasiva con tecnologías WebRTC híbridas para el desarrollo de un framework MVC de tiempo real</h3>
+            <p>Investigación sobre frameworks de tiempo real basados en WebRTC.</p>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="year">2021</div>
+          <div>
+            <span class="type">tesis de posgrado</span>
+            <h3>Redes privadas virtuales multimedia y su influencia en la seguridad de la información</h3>
+            <p>Universidad Nacional del Altiplano.</p>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="year">—</div>
+          <div>
+            <span class="type">investigación aplicada</span>
+            <h3>Predicting Key Performance Indicators (KPI) in smart manufacturing through Machine Learning</h3>
+            <p>Trabajo colaborativo con investigadores de la Universidad Nacional del Altiplano.</p>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="year">—</div>
+          <div>
+            <span class="type">investigación aplicada</span>
+            <h3>Real-Time Facial Recognition in Computer Vision for Industrial Security</h3>
+            <p>Aplicaciones de visión por computadora en seguridad industrial.</p>
+          </div>
+        </div>
+        <div class="pub">
+          <div class="year">—</div>
+          <div>
+            <span class="type">ciencias sociales</span>
+            <h3>Representación y participación política de los pueblos aymaras del altiplano peruano</h3>
+            <p>Análisis en el marco del bicentenario de la independencia del Perú.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="idiomas">
+      <div class="section-head">
+        <span class="section-num">05</span>
+        <h2>competencias lingüísticas</h2>
+        <span class="rule"></span>
+      </div>
+      <div class="langs">
+        <div class="lang-row">
+          <span class="name">Quechua</span>
+          <div class="bar"><span style="width:95%"></span></div>
+          <span class="level">nativo</span>
+        </div>
+        <div class="lang-row">
+          <span class="name">Español</span>
+          <div class="bar"><span style="width:100%"></span></div>
+          <span class="level">nativo</span>
+        </div>
+        <div class="lang-row">
+          <span class="name">Inglés</span>
+          <div class="bar"><span style="width:60%"></span></div>
+          <span class="level">intermedio</span>
+        </div>
+        <div class="lang-row">
+          <span class="name">Portugués</span>
+          <div class="bar"><span style="width:60%"></span></div>
+          <span class="level">intermedio</span>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span>© 2026 Romel Percy Melgarejo Bolivar</span>
+      <span>Puno, Perú</span>
+    </footer>
+    <p class="source-note">
+      Datos recopilados de fuentes públicas (sitio profesional, CTI Vitae / CONCYTEC
+      y publicaciones científicas indexadas). Verificar y actualizar antes de su uso oficial.
+    </p>
+
+  </main>
+</div>
+
+</body>
+</html>
