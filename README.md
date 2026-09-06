@@ -1,7 +1,7 @@
 M.Sc. Romel Percy Melgarejo Bolivar
 Ingeniero Estadístico e Informático | Especialista en TI, Ciencia de Datos y Docencia Universitaria
-Profesional peruano de la ingeniería con competencias avanzadas en Ciencia de Datos, redes telemáticas, tecnologías Web y simulación de entornos tridimensionales. Sólido trasfondo en investigación científica aplicada al ámbito de la salud y la educación, respaldado por la dirección de proyectos y cargos de liderazgo institucional en la región Puno.
----
+Profesional peruano de la ingeniería con competencias avanzadas en Ciencia de Datos, redes telemáticas, tecnologías Web y simulación de entornos tridimensionales. Sólido trasfondo en investigación científica aplicada al ámbito de la salud y la educación, respaldado por la dirección de proyectos y cargos de liderazgo institucional en la región Puno.......
+----------------------
 🎓 Formación académica
 Magíster Scientiae en Informática, mención en Gerencia de TIC — Universidad Nacional del Altiplano
 Ingeniero Estadístico e Informático (Título Profesional) — Universidad Nacional del Altiplano
@@ -9,7 +9,7 @@ Bachiller en Ciencias Estadísticas e Informática — Universidad Nacional del 
 Especialidad en Mecatrónica Automotriz (Estudios Técnicos) — I.S.T. José Antonio Encinas, Puno
 💼 Experiencia laboral e institucional
 Presidente del Capítulo de Ingenieros Estadísticos e Informáticos, Colegio de Ingenieros del Perú — Consejo Departamental Puno (Octubre 2022 – actualidad)
-Docente Universitario Ordinario / Investigador, Universidad Nacional del Altiplano – Puno (2020 – actualidad)
+Docente Universitario Ordinario / Investigador, Universidad Nacional del Altiplano – Puno (2020 – actualidad).
 Docente Auxiliar Ordinario, Universidad Nacional de Moquegua (UNAM)
 🌐 Idiomas
 Quechua: lengua nativa (nivel avanzado)
